@@ -29,3 +29,39 @@ There are 2 types of subnets.
                          
 **Example**: For example, if you create a VPC with CIDR block 10.0.0.0/24, it supports 256 IP addresses. You can break this CIDR block into two subnets, each supporting 128 IP addresses. One subnet uses CIDR block 10.0.0.0/25 (for addresses 10.0.0.0 - 10.0.0.127) and the other uses CIDR block 10.0.0.128/25 (for addresses 10.0.0.128 - 10.0.0.255).
     
+    
+The first four ip-adress and last ip adress in the subnet CIDR block cannot be used
+Ex: if the subnet CIDR block is 10.0.0.0/24
+
+10.0.0.0 : Network address
+10.0.0.1 : Reserved by AWS for VPC Router
+10.0.0.2 : Reversed by AWS for the DNS server.The ip adress of the vpc DNS server is base adress+2. but aws also reserves the base of              the each subnet + 2.
+10.0.0.3 : Reserved by AWS for future use
+10.0.0.255 : Broadcast Address
+
+
+**Security Groups controls the inbound and outbound for the instance but the Network ACL controls the inbound and out bound for the subnet.** ::confused::
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
