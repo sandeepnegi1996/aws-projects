@@ -8,3 +8,24 @@ so Let me put this in a better way imagine you start your own company and now yo
 
 
 ## VPC Deep Dive 
+
+it enables you to launch your **AWS** resources in a virtual network that you have defined.It resembles like you are operating in your own data center.VPC spans to all the availabity zones in the region.
+
+* Amazon VPC acts as a networking layer for your EC2.
+
+### Imortant Contents:
+
+1.VPCs and Subnets
+While creating a VPC you will specify the ip adress range. you will create various subnets,security groups and route table for VPC.
+Subnet is nothing but just the ip-adress range you can launch your aws resource in a particular subnet.The specified ip adress range for the subnet should be subset for the VPC CIDR block.Each subnet is created in one zone means your subnet cannot spans among multiple a-z zones.
+There are 2 types of subnets.
+
+  * **Private Subnet** : subnet will have some resources associated it with so for the resources which are inside the private subnet
+                         are not accessible to the internet.If the subnet traffic is routed to an Internet gateway than that subnet is a
+                         public subnet.
+                         
+  * **Public Subnet**  : The resources which are in public subnet can access the resources over to the internet.
+                         If a subnet traffic is not routed to an internet gateway than that subnet is a private subnet.
+                         
+**Example**: For example, if you create a VPC with CIDR block 10.0.0.0/24, it supports 256 IP addresses. You can break this CIDR block into two subnets, each supporting 128 IP addresses. One subnet uses CIDR block 10.0.0.0/25 (for addresses 10.0.0.0 - 10.0.0.127) and the other uses CIDR block 10.0.0.128/25 (for addresses 10.0.0.128 - 10.0.0.255).
+    
